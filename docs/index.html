@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Adams test</title>
-  </head>
-  <body>
-    <h1>Hejsan!</h1>
-    <footer>Testy test.</footer>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Adams test</title>
+		<style>
+			body {
+				margin: 0;
+			}
+			.bar {
+				display: block;
+				padding: 15px;
+				background: #222;
+				color: #f1f1f1;
+			}
+			a {
+				color: white;
+			}
+			#stripes {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				-webkit-transform: skewY(-12deg);
+				transform: skewY(-12deg);
+				-webkit-transform-origin: 0;
+				transform-origin: 0;
+				background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
+			}
+			#stripes,
+			#stripes span {
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Google Tag Manager -->
+		<script type="text/javascript">
+			window['dataLayer'] = [
+				{
+					VisitorIP: '91.194.26.15'
+				}
+			]
+		</script>
+		<script>
+			;(function(w, d, s, l, i) {
+				w[l] = w[l] || []
+				w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : ''
+				j.async = true
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+				f.parentNode.insertBefore(j, f)
+			})(window, document, 'script', 'dataLayer', 'GTM-W4KN6CH')
+		</script>
+		<!-- End Google Tag Manager -->
+		<nav class="bar">
+			<ul>
+				<li>
+					<a href="/">Hem</a>
+				</li>
+				<li>
+					<a href="/projekt">Projekt</a>
+				</li>
+			</ul>
+		</nav>
+
+		<h1>Hejsan!</h1>
+		<div id="dialog" hidden>
+			Acceptera cookies <button id="accept_button" value="true">Ok</button>
+		</div>
+		<button id="knapp" value="hej adam">Klick här</button>
+
+		<script>
+			const knapp = document.getElementById('knapp')
+
+			const dialog = document.getElementById('dialog')
+
+			const accept_button = document.getElementById('accept_button')
+
+			knapp.addEventListener('click', function(event) {
+				dialog.hidden = false
+			})
+
+			accept_button.addEventListener('click', function(event) {
+				dialog.hidden = true
+			})
+		</script>
+	</body>
 </html>
